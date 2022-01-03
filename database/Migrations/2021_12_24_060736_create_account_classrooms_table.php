@@ -17,7 +17,6 @@ class CreateAccountClassroomsTable extends Migration
             $table->id();
             $table->bigInteger('account_id');
             $table->bigInteger('classroom_id');
-            $table->boolean('isTeacher')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });

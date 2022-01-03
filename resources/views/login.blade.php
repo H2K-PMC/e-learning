@@ -2,6 +2,10 @@
 
 @section('title','Đăng nhập')
 
+@section('nav_bar')
+
+@endsection
+
 @section('body')
     <div class="content">
         <div class="login-content">
@@ -34,7 +38,7 @@
                     </div>
                 </form>
                 <div class="a-signup">
-                    <h3>Mới dùng H2K E-Learning? <a href="#">Đăng ký</a></h3>
+                    <h3>Mới dùng H2K E-Learning? <a href="{{ route('dang-ky') }}">Đăng ký</a></h3>
                 </div>
             </div>
         </div>

@@ -9,6 +9,9 @@
 	css?family=Nunito:400,600,700,800,900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<!-- Preloader-->
@@ -22,30 +25,7 @@
     <!-- end of preloader -->
 
     <!-- end of navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-    </nav>
-	<div class="header">
-		<div class="navbar">
-			<div class="logo">
-				<a href="#"><img src="images/logo.png"></a>
-			</div>
-			<div class="menu">
-				<ul>
-					<li>DÀNH CHO TỔ CHỨC</li>
-					<li>DÀNH CHO TRẺ EM</li>
-					<li>CÁC KHÓA CỦA CHÚNG TÔI</li>
-					<li>
-						<select>
-							<option>Tiếng Việt</option>
-							<option>English</option>
-						</select>
-					</li>
-					<li>Đăng nhập</li>
-					<li><div class="btn-Signup">Đăng ký</div></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+	@yield('nav_bar')
     <!-- end nav bar -->
 
     @yield('body')
@@ -69,8 +49,8 @@
     <!-- end footer -->
 
     <!-- script -->
-	<script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-	<script src="js/scripts.js"></script> <!-- Custom scripts -->
+	<script src="/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+	<script src="/js/scripts.js"></script> <!-- Custom scripts -->
     <!-- end script -->
 </body>
 </html>
