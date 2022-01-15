@@ -31,7 +31,7 @@
                         <label for="inputField" class="label">Remember me</label>
                     </div>
                     <div class="a-forgetpassword">
-                        <a href="#">Quên mật khẩu của bạn?</a>
+                        <a href="{{ route('quen-mat-khau') }}">Quên mật khẩu của bạn?</a>
                     </div>
                     <div class="btn-group">
                         <input type="submit" class="btn-login" value="Đăng nhập">
@@ -40,6 +40,11 @@
                 <div class="a-signup">
                     <h3>Mới dùng H2K E-Learning? <a href="{{ route('dang-ky') }}">Đăng ký</a></h3>
                 </div>
+                @if (Session::has('message'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('message') }}
+                    </div>
+                @endif
             </div>
         </div>
     </div>

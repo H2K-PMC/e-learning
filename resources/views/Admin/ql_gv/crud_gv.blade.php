@@ -1,6 +1,6 @@
 @extends('layouts.plugin_layout')
 
-@section('title', 'Quản lý sinh viên')
+@section('title', 'Quản lý giảng viên')
     
 @section('nav_bar')
     <div class="screen-wait" onclick="scrollbarFunction()"></div>
@@ -72,11 +72,11 @@
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h2>Quản lý <b>Sinh viên</b></h2>
+                                <h2>Quản lý <b>Giảng viên</b></h2>
                             </div>
                             <div class="col-sm-6">
                                 <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">	
-                                    <i class="fas fa-plus"></i> <span>Thêm sinh viên</span>
+                                    <i class="fas fa-plus"></i> <span>Thêm giảng viên</span>
                                 </a>
                                 <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal">
                                     <i class="fas fa-trash-alt"></i> <span>Xóa</span>
@@ -100,7 +100,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($dsSV as $item)
+                            @foreach ($dsGV as $item)
                             <tr>
                                 <td>
                                     <span class="custom-checkbox">
@@ -142,7 +142,7 @@
         <div id="addEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="{{ route('admin.themSinhVien')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.themGiangVien')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-header">						
                             <h4 class="modal-title">Thêm sinh viên</h4>
@@ -178,12 +178,12 @@
                 </div>
             </div>
         </div>
-        @foreach ($dsSV as $item)
+        @foreach ($dsGV as $item)
         <!-- Edit Modal HTML -->
         <div id="editEmployeeModal{{$item->id}}" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="{{ route('admin.xlCapNhatSinhVien')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.xlCapNhatGiangVien')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="id" value="{{$item->id}}">
                         <div class="modal-header">						
@@ -220,7 +220,7 @@
          <div id="deleteEmployeeModal{{$item->id}}" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="{{ route('admin.xoaSinhVien') }}" method="POST">
+                    <form action="{{ route('admin.xoaGiangVien') }}" method="POST">
                         @csrf
                         <input type="hidden" value="{{$item->id}}" name="id">
                         <div class="modal-header">						

@@ -54,33 +54,36 @@ function screenwaitFunction(){
     SHOW UPLOADED IMAGE
 * ========================================== */
 
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+// function readURL(input, elementID) {
+//     if (input.files && input.files[0]) {
+//         var reader = new FileReader();
 
-        reader.onload = function (e) {
-            $('#imageResult')
-                .attr('src', e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-    }
-}
+//         reader.onload = function(){
+// 			var output = document.getElementById(elementID);
+// 			output.src = reader.result;
+// 		  };
+//         reader.readAsDataURL(input.files[0]);
+//     }
+// }
 
-$(function () {
-    $('#upload').on('change', function () {
-        readURL(input);
-    });
-});
+  var loadFile = function(event,eleID) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var output = document.getElementById(eleID);
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
 
 /*  ==========================================
     SHOW UPLOADED IMAGE NAME
 * ========================================== */
-var input = document.getElementById( 'upload' );
-var infoArea = document.getElementById( 'upload-label' );
+// var input = document.getElementById( 'upload' );
+// var infoArea = document.getElementById( 'upload-label' );
 
-input.addEventListener( 'change', showFileName );
-function showFileName( event ) {
-  var input = event.srcElement;
-  var fileName = input.files[0].name;
-  infoArea.textContent = 'File name: ' + fileName;
-}
+// input.addEventListener( 'change', showFileName );
+// function showFileName( event ) {
+//   var input = event.srcElement;
+//   var fileName = input.files[0].name;
+//   infoArea.textContent = 'File name: ' + fileName;
+// }
